@@ -57,8 +57,8 @@ export async function POST(req: Request) {
           // return `The weather in ${location} is ${weather} with a temperature of ${temperature}°C.`;
           const weatherOutput = await generateText({
             model: openai("gpt-4o"),
-            prompt: `Describe the weather in ${location} in a controversial and fun manner but short. 
-    Current conditions: ${weather}, temperature: ${temperature}°C, humidity: ${weatherData.main.humidity}%. Announce weather location and time.`,
+            prompt: `Describe the weather in ${location} in a controversial and fun manner but short and add emojis. 
+    Current conditions: ${weather}, temperature: ${temperature}°C, humidity: ${weatherData.main.humidity}%. Announce weather location.`,
           });
 
           // for await (const textPart of weatherOutput.textStream) {
